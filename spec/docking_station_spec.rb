@@ -9,6 +9,10 @@ describe DockingStation do
     expect(bike).to be_working
   end
 
+  it 'has a default capacity' do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
+
   it { is_expected.to respond_to(:dock).with(1).argument }
 
   describe 'release_bike' do

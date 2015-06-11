@@ -1,6 +1,10 @@
 require 'docking_station'
+require 'support/shared_examples_for_bike_container'
 
 describe DockingStation do
+
+  it_behaves_like BikeContainer
+
   it { is_expected.to respond_to :release_bike }
 
   it 'releases working bikes' do

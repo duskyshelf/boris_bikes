@@ -5,15 +5,28 @@ module BikeContainer
   attr_accessor :capacity
 
   def initialize capacity = DEFAULT_CAPACITY
+    @bikes = []
     @capacity = capacity
   end
 
   def add_bike bike
-
+    fail "#{self.class.name} full" if full?
+    bikes << bike
   end
+
+
+
 
   def empty?
-    false
+    bikes.empty?
   end
+
+  def full?
+    bikes.count >= capacity
+  end
+
+  private
+
+  attr_reader :bikes
 
 end

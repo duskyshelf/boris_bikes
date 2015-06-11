@@ -27,4 +27,8 @@ class Van
     @location = :dock
   end
 
+  def put_bike_in_dock
+    end
+
+
 end

@@ -18,4 +18,11 @@ describe Van do
     expect(subject.location).to eq :dock
   end
 
+  it 'put working bike in dock' do
+    subject.load double :bike, working?: true
+    subject.put_bike_in_dock
+  end
+
+
+
 end

@@ -6,5 +6,6 @@ describe Van do
   it_behaves_like BikeContainer
 
   it { is_expected.to respond_to :unload }
+  it { is_expected.to respond_to :load }
 
 end

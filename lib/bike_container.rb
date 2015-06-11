@@ -8,4 +8,12 @@ module BikeContainer
     @capacity = capacity
   end
 
+  def add_bike bike
+
+  end
+
+  def empty?
+    false
+  end
+
 end

@@ -7,6 +7,6 @@ end
 
 describe BikeContainerTest do
 
-  it_behaves_like 'a bike container'
+  it_behaves_like BikeContainer
 
 end

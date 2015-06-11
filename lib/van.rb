@@ -14,14 +14,17 @@ class Van
   def unload bike
     remove_bike
   end
+
   def load bike
     add_bike bike
   end
+
   def drive_to_garage
-    location = :garage
+    @location = :garage
   end
+
   def drive_to_dock
-    location = :dock
+    @location = :dock
   end
 
 end

@@ -5,7 +5,6 @@ describe Van do
 
   it_behaves_like BikeContainer
 
-  it { is_expected.to respond_to(:unload).with(1).argument }
   it { is_expected.to respond_to(:load).with(1).argument }
 
   it 'can drive to garage' do
@@ -18,11 +17,9 @@ describe Van do
     expect(subject.location).to eq :dock
   end
 
-  it 'put working bike in dock' do
+  it 'allows unloading of working bike' do
     subject.load double :bike, working?: true
-    subject.put_bike_in_dock
+    expect(subject.unload_working_bike).to be_working?
   end
-
-
 
 end

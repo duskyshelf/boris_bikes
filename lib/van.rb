@@ -1,4 +1,5 @@
 require_relative 'bike_container'
+require_relative 'bike'
 
 class Van
   include BikeContainer
@@ -10,10 +11,6 @@ class Van
   end
 
   attr_accessor :location
-
-  def unload bike
-    remove_bike
-  end
 
   def load bike
     add_bike bike
@@ -28,7 +25,27 @@ class Van
   end
 
   def put_bike_in_dock
-    end
+    unload
+  end
 
+  def unload_working_bike
+    fail 'No working bikes available' if working_bikes.empty?
+    bikes.delete working_bikes.pop
+  end
+
+  def unload_broken_bike
+    fail 'No broken bikes available' if broken_bikes.empty?
+    bikes.delete working_bikes.pop
+  end
+
+  private
+
+  def working_bikes
+    bikes.reject {|bike| bike.broken?}
+  end
+
+  def broken_bikes
+    bikes.reject {|bike| bike.working?}
+  end
 
 end
